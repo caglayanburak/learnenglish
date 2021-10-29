@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "learnenglish-328d5": {
+      "hosting": {
+        "learn-english": [
+          "learnenglish-328d5"
+        ]
+      }
+    }
+  }
+}
