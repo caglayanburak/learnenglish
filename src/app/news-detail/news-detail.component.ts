@@ -31,13 +31,13 @@ export class NewsDetailComponent implements OnInit {
       .collection('news')
       .doc(this.doc_key)
       .get()
-      .subscribe(() => {
+      .subscribe((result) => {
         // @ts-ignore
-        this.link = data().link;
+        this.link = result.data().link;
          // @ts-ignore
-        this.title = data().title;
+        this.title = result.data().title;
          // @ts-ignore
-        this.sentences = data().sentences;
+        this.sentences = result.data().sentences;
       })
   }
 }
