@@ -1,7 +1,7 @@
 <h3>{{title}}</h3>
 <a href="{{link}}">go to news</a>
 <div *ngFor="let item of sentences;let i = index">
-    <p>{{item.turkish}} <button (click)="show(i)" style="
+    <p>{{item.turkish}} <button (click)="show(i.toString())" style="
         border: none;
         padding: 2px 32px;
         text-align: center;

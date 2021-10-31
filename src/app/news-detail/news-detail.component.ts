@@ -23,7 +23,7 @@ export class NewsDetailComponent implements OnInit {
 
   show(i:string)
   {
-    document.getElementById(i).style.display='block';
+   /* document.getElementById(i).style.display='block';*/
   }
   getAllSerntences() {
     this.db
@@ -31,9 +31,9 @@ export class NewsDetailComponent implements OnInit {
       .doc(this.doc_key)
       .get()
       .subscribe(response => {
-         this.link= response.data().link;
+        /* this.link= response.data().link;
          this.title= response.data().title;
-         this.sentences=response.data().sentences;
+         this.sentences=response.data().sentences;*/
       })
   }
 }
