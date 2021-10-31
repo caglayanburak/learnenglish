@@ -1,24 +1,18 @@
-import { Component } from '@angular/core';
-import { AngularFirestore } from  '@angular/fire/firestore';
+import { Component, OnInit } from '@angular/core';
+import { AngularFirestore } from '@angular/fire/firestore';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'app-news-list',
+  templateUrl: './news-list.component.html',
+  styleUrls: ['./news-list.component.css']
 })
+export class NewsListComponent implements OnInit {
 
-
-export class AppComponent {
-  title = 'learn-english';
-  constructor(private db: AngularFirestore) {  
-    //this.getAllNews();
-   }
+  constructor(private db: AngularFirestore) { }
   news:any[]=[];
-
-ngOnInit():void{
-  this.getAllNews();
-}
-
+  ngOnInit(): void {
+    this.getAllNews();
+  }
   getAllNews()
   {
     this.db.collection('news').snapshotChanges().subscribe((response) => {
@@ -32,9 +26,4 @@ ngOnInit():void{
       );
     })*/
   }
-
-  showOriginal(){
-    alert('');
-  }
-
 }
