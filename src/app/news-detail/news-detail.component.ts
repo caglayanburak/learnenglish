@@ -21,19 +21,23 @@ export class NewsDetailComponent implements OnInit {
     })
   }
 
-  show(i:string)
+  show(id: unknown)
   {
-   /* document.getElementById(i).style.display='block';*/
+    // @ts-ignore
+    document.getElementById(id).style.display = "block";
   }
   getAllSerntences() {
     this.db
       .collection('news')
       .doc(this.doc_key)
       .get()
-      .subscribe(response => {
-        /* this.link= response.data().link;
-         this.title= response.data().title;
-         this.sentences=response.data().sentences;*/
+      .subscribe(() => {
+        // @ts-ignore
+        this.link = data().link;
+         // @ts-ignore
+        this.title = data().title;
+         // @ts-ignore
+        this.sentences = data().sentences;
       })
   }
 }
