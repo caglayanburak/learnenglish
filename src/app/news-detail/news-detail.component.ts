@@ -8,22 +8,22 @@ import { ActivatedRoute, ParamMap } from '@angular/router'
   styleUrls: ['./news-detail.component.css'],
 })
 export class NewsDetailComponent implements OnInit {
-  doc_key: string = ''
+  doc_key: any = ''
   sentences: any[] = []
-  link:string;
-  title:string;
+  link:string="";
+  title:string="";
   constructor(private route: ActivatedRoute, private db: AngularFirestore) {}
 
   ngOnInit(): void {
     this.route.paramMap.subscribe((params: ParamMap) => {
-      this.doc_key = params.get('doc_key')
+      this.doc_key = params.get('doc_key');
       this.getAllSerntences()
     })
   }
 
-  show(i:number)
+  show(i:string)
   {
-    document.getElementById(i.toString()).style.display='block';
+    document.getElementById(i).style.display='block';
   }
   getAllSerntences() {
     this.db
