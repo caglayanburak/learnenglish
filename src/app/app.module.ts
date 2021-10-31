@@ -5,6 +5,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { NewsDetailComponent } from './news-detail/news-detail.component';
+import { RouterModule } from '@angular/router';
+import { NewsListComponent } from './news-list/news-list.component';
 
  const firebaseConfig = {
   apiKey: "AIzaSyBS9jKlU3R3xQ18Xy0mvMieF5eB9WkvHEY",
@@ -18,13 +21,19 @@ import { AngularFireDatabaseModule } from '@angular/fire/database';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NewsDetailComponent,
+    NewsListComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule,
+    RouterModule.forRoot([
+      {path: 'news-detail/:doc_key', component: NewsDetailComponent},
+      {path: 'news-list', component: NewsListComponent},
+    ]),
   ],
   providers: [],
   bootstrap: [AppComponent]
